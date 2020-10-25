@@ -7,7 +7,9 @@ public class FinnishPhoneNumber<phoneNumber> {
     private String phoneNumber;
 
     /**
-     *
+     * @.pre number != null && Pattern.matches("^+[0-9]", number)&& number > 6 && number < 12
+     * @.post this.phonemumber = number
+     * phoneNumber.length() > 6 && phoneNumber.length() < 13
      * @param number - user inputed number on string
      *   Accepts only numbers and + in the beginning
      *    String size limi is 7 to 12 otherwise IllegalArgumentException

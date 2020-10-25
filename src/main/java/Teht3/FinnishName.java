@@ -17,8 +17,11 @@ public class FinnishName {
      * @param lastName - string of lastname
      *          will throw IllegalArgumentException if used other than letters and -.
      *                 no limits on string sizes.
-     *                 First names can only bee max 4.
+     * @.pre firsNames != null && firsNames.length > 0 && firsNames.lwngth < 5 && lastName != null && Pattern.matches("[a-zA-Z-]+",lastName)
+     * && FORALL(name : firstNames ; Pattern.matches("[a-zA-Z-]+",name))
+     * @.post this.firstNames.equals(firstNames) && this.lastName.equals(lastName)
      *
+     * @throws IllegalArgumentException
      *
      */
     public FinnishName(List<String> firsNames, String lastName) {
