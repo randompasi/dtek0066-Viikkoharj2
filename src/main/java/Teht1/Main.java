@@ -27,8 +27,8 @@ if(voittaja == 3) System.out.println("Tasapeli?");
      *      * (RESULT == 2 && pelaaja2 == "kivi" && palaaja1 == "saksi" )||
      *      * (RESULT == 2 && pelaaja2 == "paperi" && palaaja1 == "kivi" )||
      *      (RESULT == 3 && pelaaja1 == pelaaja2) ||
-     *      ( (pelaaja1 != "kivi" && pelaaja1 != "saksi" && pelaaja1 != "paperi")
-     *      || (pelaaja2 != "kivi" && pelaaja2 != "saksi" && pelaaja2 != "paperi") && throws ErrorException  )
+     *      ( (pelaaja1 != "kivi" && pelaaja1 != "saksi" && pelaaja1 != "paperi")||
+     *      (pelaaja2 != "kivi" && pelaaja2 != "saksi" && pelaaja2 != "paperi") && throws ErrorException  )
      * @return int
      * @throws ErrorException
      *

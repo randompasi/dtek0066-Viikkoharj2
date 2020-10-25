@@ -11,8 +11,9 @@ public class Main {
         Set<Card> käsi = new HashSet<>(5);
         System.out.println("Input Cards first land then rank with Small cases example ck");
         for(int i=0; i<5; i++) {
-            String card = new Scanner(System.in).nextLine();
-            määritäKortti(card);
+            String land = new Scanner(System.in).nextLine();
+            String rank = new Scanner(System.in).nextLine();
+            määritäKortti(land, rank);
         }
 
         boolean käsiSisältääParin = sisaltaaParin(käsi);
@@ -23,22 +24,20 @@ public class Main {
     }
 
     /**
-     *
-     * @param card
+     * @.pre land != null && rank != null
+     * @.post ( RESULT == Card && (Card.getLand() == "d" || Card.getLand() == "c" || Card.getLand() == "h" || Card.getLand() == "s") &&
+     *( Card.getRank() == "2" || Card.getRank() == "3" || Card.getRank() == "4" || Card.getRank() == "5" || Card.getRank() == "6" ||
+     * Card.getRank() == "7" || Card.getRank() == "8" || Card.getRank() == "9" || Card.getRank() == "10" || Card.getRank() == "J" ||
+     * Card.getRank() == "Q" || Card.getRank() == "K" || Card.getRank() == "A") ) || throws WrongCardError)
+     * @param land
+     * @param rank
      * @return - Card object that has Land and Rank as String
+     *
+     * @throws WrongCardError
      */
 
-    private static @NotNull Card määritäKortti(@NotNull String  card){
-        while(true) {
-            if (isValidCard(card)) {
-                return new Card(card.substring(0, 0), card.substring(1, 1));
-            }
-            else{
-                System.out.println("Wrong format on card use \"C3\" try again");
-                card = new Scanner(System.in).nextLine();
-            }
+    private static Card määritäKortti(String  land, String rank) throws WrongCardError{
 
-        }
     }
 
     /**
@@ -46,24 +45,14 @@ public class Main {
      *  @param  hand
      * @return -boolean is there pair in hand
      * doubble pairs, three or four same will be counted that hand contains pair
-     */
-    private static @NotNull boolean sisaltaaParin(@NotNull Set<Card> hand){
-
-        for (Card card : hand){
-          if( Collections.frequency(hand, card.getRank()) > 1);
-                return true;
-        }
-        return false;
-    }
-
-    /**
+     * @.pre hand != null && hand.length == 5
+     * @.post RESULT == true && EXIST(card1,card2 : hand ; FORALL(card1, card2 : hand ; card1 != card2)
+     * && card1.getRank.equals(card2.getRank) )
      *
-     * @param card
-     * @return - boolean is user given card acceptable
      */
-    private static @NotNull boolean isValidCard(@NotNull String card){
-        List<String> validCards = new ValidCards().getValidCards();
-        return validCards.contains(card);
+    private static boolean sisaltaaParin( Set<Card> hand){
 
     }
+
+
 }
