@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         Set<Card> käsi = new HashSet<>(5);
-        System.out.println("Input Cards first land then rank with Small cases example CK");
+        System.out.println("Input Cards first land then rank with Small cases example ck");
         for(int i=0; i<5; i++) {
             String card = new Scanner(System.in).nextLine();
             määritäKortti(card);

@@ -5,7 +5,7 @@ public class DataTransferSpeed {
     private Double speed;
 
     /**
-     *
+
      * @param bytes - amount of data transfered in bytes
      * @param seconds - time it took to transfer data
      *   speed is byte on second transfer speed USES  double values
@@ -14,7 +14,8 @@ public class DataTransferSpeed {
      *     over this will cause positive or negative infinty.
      *       ERROR IF DOUBLE ASSIGNED OVER MAX VALUE ON COMPILE TIME
      *
-     *
+     * @.pre bytes > 0 && seconds > 0
+     * @.post speed == bytes/seconds
      */
 
     public DataTransferSpeed (double bytes, double seconds){

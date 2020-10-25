@@ -5,12 +5,23 @@ import java.util.List;
 
 public class ValidCards {
 
+
+    /**
+     * @.pre true
+     * @.post RESULT == validCards
+     * @return List<String>
+     */
     public List<String> getValidCards() {
         return validCards;
     }
 
     private List<String> validCards;
 
+
+    /**
+     * @.pre true
+     * @.post validCards != null && validCards.length == 52
+     */
     public ValidCards() {
         validCards = new ArrayList<String>();
                     initLandCards("c");
